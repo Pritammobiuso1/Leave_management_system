@@ -1,0 +1,76 @@
+package MOBI;
+
+import java.util.*;
+
+class Employee_leave
+{
+	int total_leave=10;	
+	
+	public void Employee_leave(int number_of_leave)
+	{	
+		if(number_of_leave<=total_leave )
+		{
+			
+			manager object=new manager();
+			
+			if(object.Accept_Reject())
+			{
+				System.out.println("your leave is approve");
+				
+				total_leave=total_leave-number_of_leave;
+				
+				System.out.println("Remaining leaves "+total_leave);
+			}
+			else
+			{
+				System.out.println("Your leave is rejected");
+			}
+			
+		}
+		else
+		{
+			System.out.println("You allow only 10 leaves");
+		}
+	
+	}
+	
+	
+}
+class manager
+{
+	public boolean Accept_Reject()
+	{
+		Scanner scanner =new Scanner (System.in);
+		
+		System.out.println("Manager accecept then press 'yes' and to reject the leave press 'no'");
+		String opinion=scanner.next();
+		
+		if(opinion.equalsIgnoreCase("yes"))
+		{
+			return true;
+		}
+		else
+		{
+			return false;
+		}
+		
+	}
+}
+
+
+
+public class Leave_Management_System
+{
+	public static void main(String [] args)
+	{
+		Scanner scanner =new Scanner (System.in);
+		System.out.println("Enter the number of leaves");
+		int number_of_leave=scanner.nextInt();
+	
+		Employee_leave obj=new Employee_leave();
+		obj.Employee_leave(number_of_leave);
+		
+
+	}
+
+}
