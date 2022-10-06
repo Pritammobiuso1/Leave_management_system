@@ -4,12 +4,13 @@ import java.util.*;
 
 class Employee_leave
 {
-	int total_leave=10;	
+	static int total_leave=10;	
 	
 	public void Employee_leave(int number_of_leave)
 	{	
 		if(number_of_leave<=total_leave )
 		{
+			
 			
 			manager object=new manager();
 			
@@ -64,6 +65,7 @@ public class Leave_Management_System
 	public static void main(String [] args)
 	{
 		Scanner scanner =new Scanner (System.in);
+		System.out.println("Your total leaves are "+Employee_leave.total_leave);
 		System.out.println("Enter the number of leaves");
 		int number_of_leave=scanner.nextInt();
 	
